@@ -1,0 +1,1 @@
+Web application project for the rest of the warehouse for partners.
