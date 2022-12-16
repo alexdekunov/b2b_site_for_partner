@@ -7,4 +7,4 @@ print(f"""Имя {user.name}
 email {user.email}""")
 
 # мы видем потому что в models.py  есть def __repr__(self):
-# если его убрать то мы будем видеть только <models.User object at 0x0000029BBE98F850> адрес объекта
+# если его убрать то мы будем видеть только <models.User object at 0x0000029BBE98F850> адрес объекта/
