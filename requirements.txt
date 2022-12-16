@@ -1,5 +1,4 @@
 Flask==2.2.2
-python 3.10.8
 mypy==0.991
 SQLAlchemy==1.4.45
 psycopg2-binary==2.9.5
