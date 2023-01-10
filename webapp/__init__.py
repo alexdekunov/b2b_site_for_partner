@@ -8,5 +8,11 @@ def create_app():
     def index():
         title = "Новый проект"
         return render_template('index.html')
+    
+
+    @app.route('/about')
+    def about():
+        title = "О нас"
+        return render_template('about.html')
 
     return app
