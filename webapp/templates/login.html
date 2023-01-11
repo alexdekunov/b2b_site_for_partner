@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <h1>{{ page_title }}</h1>
+  <div class="row">
+    <div class="col-8">
+      <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+          {{ form.username.label }}<br>
+          {{ form.username.label }}
+        </p>
+        <p>
+          {{ form.password.label }}<br>
+          {{ form.password() }}
+      </p>
+      <p>{{ form.submit }}</p>
+      </form>
+
+    </div>
+  </div>
+    
+    
+</div>
+
+
+{% endblock %}
