@@ -5,11 +5,12 @@ from webapp.forms import LoginForm
 
 def create_app():
     app = Flask(__name__)
+    app.config.from_pyfile('config.py')
 
     @app.route('/')
     def index():
-        title = "Новый проект"
-        return render_template('index.html')
+        title = "Главная страница"
+        return render_template('index.html', page_title=title)
     
 
     @app.route('/login')
@@ -23,6 +24,6 @@ def create_app():
     @app.route('/about')
     def about():
         title = "О нас"
-        return render_template('about.html')
+        return render_template('about.html', page_title=title)
 
     return app
