@@ -16,7 +16,7 @@
 5. Страница новости для партнёров
 
 ### Установка проекта
-Клонируем проект `git clone <ссылка>`
-Ставим виртуальное окружение `python -m venv env`
-Активируем виртуальное окружение `env\Scripts\activate`
-Устанавливаем зависимости `piip install -r requirements.txt`
+Клонируем проект `git clone <ссылка>` 
+Ставим виртуальное окружение `python -m venv env` 
+Активируем виртуальное окружение `env\Scripts\activate` 
+Устанавливаем зависимости `piip install -r requirements.txt` 
