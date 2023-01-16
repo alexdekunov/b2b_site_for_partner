@@ -34,7 +34,12 @@
           {{ form.password() }}
         </div>
         </br>
-        {{ form.submit() }}
+        <div class="form-group form-check">
+          {{ form.remember_me() }}
+          {{ form.remember_me.label(class_='form-check-label')}}
+        </div>
+        </br>
+          {{ form.submit() }}
       </form>
 
     </div>
