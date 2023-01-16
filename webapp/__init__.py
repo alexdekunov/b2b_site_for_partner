@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, redirect, url_for
-from flask_login import LoginManager, login_user, logout_user
+from flask_login import LoginManager, current_user, login_required, login_user, logout_user
 
 from webapp.forms import LoginForm
 from webapp.model import db, User
@@ -25,6 +25,8 @@ def create_app():
     
     @app.route('/login')
     def login():
+        if current_user.is_authenticated:
+            return redirect(url_for('index'))
         title = 'Авторизация'
         login_form = LoginForm()
         return render_template('login.html', page_title=title, form=login_form)
@@ -51,6 +53,14 @@ def create_app():
     def logout():
         logout_user()
         flash('Вы вышли из личного кабинета')
-        return redirect(url_for('login'))
+        return redirect(url_for('index'))
+
+    @app.route('/admin')
+    @login_required
+    def admin_index():
+        if current_user.is_admin:
+            return 'Привет админ!'
+        else:
+            return 'Ты не админ!'
 
     return app
