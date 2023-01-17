@@ -5,6 +5,7 @@ from flask_login import LoginManager, current_user, login_required
 from webapp.model import db
 from webapp.user.models import User
 from webapp.user.views import blueprint as user_blueprint
+from webapp.admin.views import blueprint as admin_blueprint
 
 def create_app():
     app = Flask(__name__)
@@ -15,6 +16,7 @@ def create_app():
     login_manager.init_app(app)
     login_manager.login_view = 'user.login'
     app.register_blueprint(user_blueprint)
+    app.register_blueprint(admin_blueprint)
 
     @login_manager.user_loader
     def load_user(user_id):
@@ -31,13 +33,5 @@ def create_app():
         title = "О нас"
         return render_template('about.html', page_title=title)
     
-
-    @app.route('/admin')
-    @login_required
-    def admin_index():
-        if current_user.is_admin:
-            return 'Привет админ!'
-        else:
-            return 'Ты не админ!'
 
     return app
