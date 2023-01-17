@@ -19,4 +19,4 @@
 Клонируем проект `git clone <ссылка>`  
 Ставим виртуальное окружение `python -m venv env`  
 Активируем виртуальное окружение `env\Scripts\activate`  
-Устанавливаем зависимости `piip install -r requirements.txt`  
+Устанавливаем зависимости `pip install -r requirements.txt`  
