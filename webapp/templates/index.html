@@ -7,6 +7,20 @@
 {% block body %}
 
 <div class="container">
+    <!--alert-->
+    <div class="col-4">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-warning" role="alert">
+          {% for message in messages %}
+            {{ message }}<br>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% endwith %}
+    </div>  
+
+    <!--Центральный блок-->
     <div class="px-4 py-5 my-5 text-center">
         
         <h1 class="display-5 fw-bold">Центральный заголовок</h1>
@@ -18,7 +32,8 @@
           </div>
         </div>
     </div>
-
+    
+    <!--колонки с иконками-->
     <div class="container px-4 py-5" id="featured-3">
         <h2 class="pb-2 border-bottom">Колонки с иконками</h2>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
