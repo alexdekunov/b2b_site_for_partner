@@ -23,7 +23,7 @@
       {% endwith %}
       
       <!--form-->
-      <form action="{{ url_for('process_login') }}" method="POST">
+      <form action="{{ url_for('user.process_login') }}" method="POST">
         {{ form.hidden_tag() }}
         <div class="form-group">
           {{ form.username.label }}
