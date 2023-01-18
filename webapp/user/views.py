@@ -32,4 +32,4 @@ def process_login():
 def logout():
     logout_user()
     flash('Вы вышли из личного кабинета')
-    return redirect(url_for('index'))
+    return render_template('index.html')
