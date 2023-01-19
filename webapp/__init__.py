@@ -6,7 +6,7 @@ from webapp.model import db
 from webapp.user.models import User
 from webapp.user.views import blueprint as user_blueprint
 from webapp.admin.views import blueprint as admin_blueprint
-from webapp.about.views import blueprint as about_blueprint
+from webapp.catalog.views import blueprint as catalog_blueprint
 from webapp.top.views import blueprint as top_blueprint
 
 def create_app():
@@ -19,7 +19,7 @@ def create_app():
     login_manager.login_view = 'user.login'
     app.register_blueprint(user_blueprint)
     app.register_blueprint(admin_blueprint)
-    app.register_blueprint(about_blueprint)
+    app.register_blueprint(catalog_blueprint)
     app.register_blueprint(top_blueprint)
 
 
