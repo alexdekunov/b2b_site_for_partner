@@ -6,6 +6,7 @@ from webapp.model import db
 from webapp.user.models import User
 from webapp.user.views import blueprint as user_blueprint
 from webapp.admin.views import blueprint as admin_blueprint
+from webapp.about.views import blueprint as about_blueprint
 
 def create_app():
     app = Flask(__name__)
@@ -17,6 +18,8 @@ def create_app():
     login_manager.login_view = 'user.login'
     app.register_blueprint(user_blueprint)
     app.register_blueprint(admin_blueprint)
+    app.register_blueprint(about_blueprint)
+
 
     @login_manager.user_loader
     def load_user(user_id):
@@ -28,10 +31,4 @@ def create_app():
         return render_template('index.html', page_title=title)
     
     
-    @app.route('/about')
-    def about():
-        title = "О нас"
-        return render_template('about.html', page_title=title)
-    
-
     return app
