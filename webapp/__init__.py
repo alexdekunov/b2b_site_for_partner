@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_login import LoginManager, current_user, login_required
+from flask_login import LoginManager
 
 
 from webapp.model import db
@@ -7,6 +7,7 @@ from webapp.user.models import User
 from webapp.user.views import blueprint as user_blueprint
 from webapp.admin.views import blueprint as admin_blueprint
 from webapp.about.views import blueprint as about_blueprint
+from webapp.top.views import blueprint as top_blueprint
 
 def create_app():
     app = Flask(__name__)
@@ -19,16 +20,11 @@ def create_app():
     app.register_blueprint(user_blueprint)
     app.register_blueprint(admin_blueprint)
     app.register_blueprint(about_blueprint)
+    app.register_blueprint(top_blueprint)
 
 
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.get(user_id)
-
-    @app.route('/')
-    def index():
-        title = "Главная страница"
-        return render_template('index.html', page_title=title)
-    
-    
+  
     return app

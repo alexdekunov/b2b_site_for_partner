@@ -9,7 +9,7 @@ blueprint = Blueprint('user', __name__, url_prefix='/users')
 @blueprint.route('/login')
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('top.index'))
     title = 'Авторизация'
     login_form = LoginForm()
     return render_template('login.html', page_title=title, form=login_form)
@@ -32,4 +32,4 @@ def process_login():
 def logout():
     logout_user()
     flash('Вы вышли из личного кабинета')
-    return redirect(url_for('index'))
+    return redirect(url_for('top.index'))
