@@ -6,50 +6,52 @@
 
 {% block body %}
 
-{% include 'block/menu.html' %}
+  {% include 'block/menu.html' %}
 
-<div class="container">
-  <h1>{{ page_title }}</h1>
-  <div class="row">
-    <div class="col-4">
-
-      <!--alert-->
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="alert alert-warning" role="alert">
-          {% for message in messages %}
+  <!--alert-->
+  <div class="container">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-danger" role="alert">
             {{ message }}<br>
-          {% endfor %}
-        </div>
-        {% endif %}
-      {% endwith %}
-      
-      <!--form-->
-      <form action="{{ url_for('user.process_reg') }}" method="POST">
-        {{ form.hidden_tag() }}
-        <div class="form-group">
-            {{ form.username.label }}
-            {{ form.username }}
-        </div>
-        <div class="form-group">
-            {{ form.email.label }}
-            {{ form.email }}
           </div>
-        <div class="form-group">
-            {{ form.password.label }}
-            {{ form.password() }}
-        </div>
-        <div class="form-group">
-            {{ form.password2.label }}
-            {{ form.password2() }}
-        </div>
-        </br>
-            {{ form.submit() }}
-      </form>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
 
+  <div class="container">
+    <h1>{{ page_title }}</h1>
+    <div class="row">
+      <div class="col-4"> 
+        
+        <!--form-->
+        <form action="{{ url_for('user.process_reg') }}" method="POST">
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+              {{ form.username.label }}
+              {{ form.username }}
+          </div>
+          <div class="form-group">
+              {{ form.email.label }}
+              {{ form.email }}
+            </div>
+          <div class="form-group">
+              {{ form.password.label }}
+              {{ form.password() }}
+          </div>
+          <div class="form-group">
+              {{ form.password2.label }}
+              {{ form.password2() }}
+          </div>
+          </br>
+              {{ form.submit() }}
+        </form>
+
+      </div>
     </div>
   </div>
-</div>
 
 
 {% endblock %}
