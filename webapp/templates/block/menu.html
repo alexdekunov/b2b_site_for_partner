@@ -6,11 +6,37 @@
       </a>
       <!-- menu -->
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Главная</a></li>
-        <li class="nav-item"><a href="{{ url_for('user.login') }}" class="nav-link">Авторизоваться</a></li>
-        <li class="nav-item"><a href="{{ '/catalog' }}" class="nav-link">Каталог</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Пусто</a></li>
-        <li class="nav-item"><a href="/users/logout" class="nav-link">logout</a></li>
+        <li class="nav-item">
+          <a href="/" class="nav-link" aria-current="page">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ '/catalog' }}" class="nav-link">Каталог</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Пусто</a>
+        </li>
+        
+        {%  if current_user.is_authenticated %}
+          <li class="nav-item">
+            <span class="nav-link">Привет, {{ current_user.username }}</span>
+          </li>
+          {% if current_user.is_admin %}
+            <li class="nav-item">
+              <a href="{{ url_for('admin.admin_index') }}" class="nav-link">Админка</a>
+            </li>
+          {% endif %}
+          <li class="nav-item">
+            <a href="/users/logout" class="nav-link">Выйти</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a href="{{ url_for('user.register') }}" class="nav-link">Регистрация</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('user.login') }}" class="nav-link">Войти</a>
+          </li>
+        {% endif %}
+
       </ul>
     </header>
 </div>
