@@ -10,121 +10,35 @@
 
 
 <div class="container">
-    <!-- Центральный блок -->
-    <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">О нас</h1>
-        <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Информация о проекте. Информация о проекте. Информация о проекте. Информация о проекте.</p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Кнопка 1</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Кнопка 2</button>
-          </div>
-        </div>
+  <h1>{{ page_title }}</h1>
+  
+  <div class="row">
+    <div class="col-4">
+      {% for product in products %}
+        <h5>Наименование товара: {{ product.name }}</h5>
+        <p>Стоимость: {{ product.price }} руб.</br>
+        В наличии - {{ product.price }} шт.</p>
+      {% endfor %}
     </div>
-    
-    <!-- Колонки с иконками -->
-    <div class="container px-4 py-5" id="featured-3">
-        <h2 class="pb-2 border-bottom">Columns with icons</h2>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-          <div class="feature col">
-            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
-            </div>
-            <h3 class="fs-2">Featured title</h3>
-            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-            <a href="#" class="icon-link d-inline-flex align-items-center">
-              Call to action
-              <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
-            </a>
-          </div>
-          <div class="feature col">
-            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"></use></svg>
-            </div>
-            <h3 class="fs-2">Featured title</h3>
-            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-            <a href="#" class="icon-link d-inline-flex align-items-center">
-              Call to action
-              <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
-            </a>
-          </div>
-          <div class="feature col">
-            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-              <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
-            </div>
-            <h3 class="fs-2">Featured title</h3>
-            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-            <a href="#" class="icon-link d-inline-flex align-items-center">
-              Call to action
-              <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
-            </a>
-          </div>
-        </div>
-    </div>
-    
-    <!-- Сетка значков -->
-    <div class="container px-4 py-5" id="icon-grid">
-        <h2 class="pb-2 border-bottom">Icon grid</h2>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading.</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"></use></svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading.</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"></use></svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading.</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"></use></svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading.</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"></use></svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading.</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#toggles2"></use></svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading.</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#geo-fill"></use></svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading.</p>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"></use></svg>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4">Featured title</h3>
-              <p>Paragraph of text beneath the heading to explain the heading.</p>
+    <div class="col-8">
+      {% for product in products %}
+        <div class="row">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">Подробное описание товара с характеристиками.</p>
+                <a href="#" class="btn btn-primary">{{ product.price }} руб.</a>
+              </div>
             </div>
           </div>
         </div>
+        </br>
+      {% endfor %}
     </div>
+
+  </div>
 
 </div>
 {% endblock %}
