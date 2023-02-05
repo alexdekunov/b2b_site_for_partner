@@ -9,6 +9,7 @@ from webapp.user.views import blueprint as user_blueprint
 from webapp.admin.views import blueprint as admin_blueprint
 from webapp.catalog.views import blueprint as catalog_blueprint
 from webapp.top.views import blueprint as top_blueprint
+from webapp.news.views import blueprint as news_blueprint
 
 def create_app():
     app = Flask(__name__)
@@ -23,6 +24,7 @@ def create_app():
     app.register_blueprint(admin_blueprint)
     app.register_blueprint(catalog_blueprint)
     app.register_blueprint(top_blueprint)
+    app.register_blueprint(news_blueprint)
 
 
     @login_manager.user_loader
