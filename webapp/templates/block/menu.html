@@ -9,20 +9,22 @@
         <li class="nav-item">
           <a href="/" class="nav-link" aria-current="page">Главная</a>
         </li>
-        <li class="nav-item">
-          <a href="{{ '/catalog' }}" class="nav-link">Каталог</a>
-        </li>
                 
         {%  if current_user.is_authenticated %}
-          <li class="nav-item">
-            <span class="nav-link">Привет, {{ current_user.username }}</span>
-          </li>
+          
           <li class="nav-item">
             <a href="{{ '/catalog' }}" class="nav-link">Каталог</a>
           </li>
           {% if current_user.is_admin %}
             <li class="nav-item">
+              <span class="nav-link">Привет, {{ current_user.role }} {{ current_user.username }}</span>
+            </li>
+            <li class="nav-item">
               <a href="{{ url_for('admin.admin_index') }}" class="nav-link">Админка</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <span class="nav-link">Привет, {{ current_user.username }}</span>
             </li>
           {% endif %}
           <li class="nav-item">
